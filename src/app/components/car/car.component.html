@@ -1,10 +1,10 @@
 
-<table *ngIf="dataLoaded!=false" class=table>
+<table *ngIf="dataLoaded!=false" class="table table-striped-columns">
     <thead>
         <tr>
             <th>Id</th>
-            <th>BrandId</th>
-            <th>ColorId</th>
+            <th>Brand</th>
+            <th>Color</th>
             <th>Price</th>
             <th>Description</th>
             <th>ModelYear</th>
@@ -12,8 +12,8 @@
     </thead> 
     <tr *ngFor="let car of cars">
         <td>{{car.id}}</td>
-        <td>{{car.brandId}}</td>
-        <td>{{car.colorId}}</td>
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
         <td>{{car.dailyPrice}}</td>
         <td>{{car.description}}</td>
         <td>{{car.modelYear}}</td>

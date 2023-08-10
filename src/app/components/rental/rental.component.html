@@ -1,0 +1,16 @@
+<table *ngIf="dataLoaded==true" class="table table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let rent of rentals">
+        <td>{{rent.id}}</td>
+        <td>{{rent.brandName}}</td>
+        <td>{{rent.firstName}}</td>
+        <td>{{rent.lastName}}</td>
+    </tr>
+</table>

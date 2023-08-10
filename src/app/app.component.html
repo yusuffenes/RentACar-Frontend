@@ -1,12 +1,31 @@
-<div class=container>
+
+<div class="container">
+
   <app-navi></app-navi>
-  <div class=row>
-    <div class=col-md-2>
+  <div class="row">
+    <div class="col-md-3">
       <app-brand></app-brand>
+      <app-color></app-color>
     </div>
-    <div class=col-md-10>
+    <div class="col-md-9">
+      <figure class="text-center">
+        <blockquote class="blockquote">
+          <p>ALL CARS</p>
+        </blockquote>
+    </figure>
       <app-car></app-car>
+      <figure class="text-center">
+          <blockquote class="blockquote">
+            <p>ALL RENTALS</p>
+          </blockquote>
+      </figure>
+      <app-rental></app-rental>
     </div>
+    <app-customer></app-customer>
+    
   </div>
-  <router-outlet></router-outlet>
+  
 </div>
+
+
+<router-outlet></router-outlet>
