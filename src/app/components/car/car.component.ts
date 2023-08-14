@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
 
 import { HttpClient } from '@angular/common/http';
-import { CarResponseModel } from 'src/app/models/carResponseModel';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
