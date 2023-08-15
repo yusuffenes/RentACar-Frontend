@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
 import { Car } from 'src/app/models/car';
-
-import { HttpClient } from '@angular/common/http';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -16,18 +15,44 @@ export class CarComponent implements OnInit {
 
 
 
-  constructor(private carService:CarService){};
+  constructor(private carService:CarService,private activatedRoute:ActivatedRoute){};   /// Active olmuş sayfa hangisi ise onu acar
+
 
   ngOnInit(): void {
-    this.getCars();
     
+    this.activatedRoute.params.subscribe(params => {
+      if (params["id"]){
+        this.getCarsByBrand(params["id"])
+      }
+      else if (params["colorId"]){
+        this.getCarsByColor(params["colorId"])
+      }
+      else{
+        this.getCars();
+      }
+    });
   }
+
   getCars(){
     this.carService.getCars().subscribe(response=>{
       this.cars = response.data
       this.dataLoaded = true;
   })
-
   }
+
+  getCarsByBrand(id:number){
+    this.carService.getCarsByBrand(id).subscribe(response=>{
+      this.cars = response.data
+      this.dataLoaded = true;
+  })
+  }
+
+  getCarsByColor(colorId:number){
+    this.carService.getCarsByColor(colorId).subscribe(response=>{
+      this.cars = response.data
+      this.dataLoaded = true;
+    })
+  }
+
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { empty } from 'rxjs';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -12,7 +13,7 @@ export class BrandComponent implements OnInit {
 
   brands:Brand[]=[];
 
-  currentBrand:Brand;
+  currentBrand:Brand|null;
   
   dataLoaded=false;
 
@@ -32,10 +33,10 @@ export class BrandComponent implements OnInit {
     })
   }
 
-  setCurrentBrand(brand:Brand) {
+  setCurrentBrand(brand:Brand|null) {
     this.currentBrand = brand;
   }
-  
+
   getCurrentBrandClass(brand:Brand){
     if(brand==this.currentBrand){
       return "active";
@@ -44,5 +45,23 @@ export class BrandComponent implements OnInit {
       return "";
     }
   }
+  getAllBrandClasses(): string {
+    if (!this.currentBrand) {
+      return "active"; // Eğer herhangi bir marka seçili değilse, işaretlemeyi uygula
+    } else {
+      return ""; // Eğer bir marka seçiliyse, işaretlemeyi kaldır
+    }
+  }
+  
+  getStatusInfo(status: boolean): boolean {
+    return !this.currentBrand;
+  }
+
+  unsetCurrentBrand() {
+    this.currentBrand = null;
+  }
+  
 
 }
+
+

@@ -1,30 +1,22 @@
-
 <div class="container">
-
   <app-navi></app-navi>
   <div class="row">
     <div class="col-md-2">
-      <app-brand></app-brand>
-      <app-color></app-color>
-      <app-customer></app-customer>
+      <div class="p-3">
+        <app-brand></app-brand>
+        <hr>
+        <app-color></app-color>
+        <hr>
+        <app-customer></app-customer>
+      </div>
     </div>
     <div class="col-md-10">
-      <figure class="text-center">
-        <blockquote class="blockquote">
-          <p>ALL CARS</p>
-        </blockquote>
-    </figure>
-      <router-outlet></router-outlet>
-      <figure class="text-center">
-          <blockquote class="blockquote">
-            <p>ALL RENTALS</p>
-          </blockquote>
-      </figure>
-      <app-rental></app-rental>
+      <div class="p-3">
+        <h3 class="text-center mb-4">Tüm Araçlar</h3>
+        <router-outlet></router-outlet>
+        <h3 class="text-center mt-4">Tüm Kiralamalar</h3>
+        <app-rental></app-rental>
+      </div>
     </div>
-   
-    
   </div>
-  
 </div>
-
