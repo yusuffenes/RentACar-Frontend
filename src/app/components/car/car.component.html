@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let carDetails of carDetails" class="col-md-6 mb-4">
+      <div class="card car-card">
+        <div class="card-header">
+          <h5 class="card-title text-center">{{ carDetails.brandName }} | {{ carDetails.modelYear }}</h5>
+        </div>
+
+        <img [src]="backendUrl + carDetails.imageFolder"
+             style="object-fit: cover;" class="card-img-top" alt="Car Image">
+
+        <div class="card-body text-center">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Id:</b> {{ carDetails.id }}</li>
+            <li class="list-group-item"><b>Marka:</b> {{ carDetails.brandName }}</li>
+            <li class="list-group-item"><b>Yıl:</b> {{ carDetails.modelYear }}</li>
+            <li class="list-group-item"><b>Renk:</b> {{ carDetails.colorName }}</li>
+            <li class="list-group-item"><b>Fiyat:</b> {{ carDetails.dailyPrice }} TL/Gün</li>
+            <li class="list-group-item"><b>Açıklama:</b> {{ carDetails.description }}</li>
+          </ul>
+          <div class="mt-3">
+            <a [routerLink]="'/cars/cardetail/' + carDetails.id" class="btn btn-primary btn-enlarge-on-hover">İncele</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

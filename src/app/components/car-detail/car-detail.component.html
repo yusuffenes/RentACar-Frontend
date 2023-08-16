@@ -1,0 +1,54 @@
+<div class="container" *ngIf="carDetails">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card" style="margin-bottom: 15px;">
+        <div class="card-body">
+          <img *ngIf="carImage; else otherContent"
+               src="{{ apiUrl }}{{ carImage.imageFolder }}"
+               class="card-img-top img-fluid clickable-img"
+               alt="Car Image"
+               style="max-height: 600px; width: 100%; cursor: pointer;"
+               (click)="enlargeImage(carImage)" />
+          <ng-template #otherContent>
+            <div class="picsum-img-wrapper">
+              <img src="{{ defaultImagePath }}" class="card-img-top img-fluid" alt="Default Image"
+                   style="max-height: 400px; width: 100%;" />
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="card"
+             style="margin-bottom: 200px; margin-right: 15px; margin-left: 15px; width: 100%; height: auto; background-color: #f8f9fa;">
+
+          <div>
+            <div>
+              <div class="card-header bg-warning text-dark" *ngFor="let car of carDetails">
+                <b>{{ car.brandName }} {{ car.modelYear }}</b>
+              </div>
+              <br>
+              <div class="" *ngFor="let car of carDetails">
+
+                <p class="card-text"><b class="text-danger">Araba:</b> {{ car.id }}</p>
+                <hr>
+                <p class="card-text"><b class="text-success">Marka:</b> {{ car.brandName }}</p>
+                <hr>
+                <p class="card-text"><b class="text-info">Renk:</b> {{ car.colorName }}</p>
+                <hr>
+                <p class="card-text"><b class="text-primary">Model:</b> {{ car.modelYear }}</p>
+                <hr>
+                <p class="card-text"><b class="text-warning">Not:</b> {{ car.description }}</p>
+                <hr>
+                <p class="card-text"><b class="text-secondary">Fiyat:</b> {{ car.dailyPrice }}</p>
+                <hr>
+                <a type="button" class="btn btn-primary">Kirala</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

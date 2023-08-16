@@ -1,0 +1,25 @@
+<div class="container">
+    <div *ngIf="dataLoaded == true" class="my-4">
+        <table class="table table-striped table-bordered table-hover table-responsive">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rent of rentals">
+                    <td>{{ rent.id }}</td>
+                    <td>{{ rent.brandName }}</td>
+                    <td>{{ rent.firstName }}</td>
+                    <td>{{ rent.lastName }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="dataLoaded==false" class="spinner-border text-center-mt-3" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>

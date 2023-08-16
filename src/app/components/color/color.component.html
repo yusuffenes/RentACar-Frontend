@@ -1,0 +1,20 @@
+<div class="container">
+  <div *ngIf="dataLoaded" class="my-4">
+    <ul class="list-group">
+      <li (click)="unsetCurrentColor();"
+          routerLink="cars"
+          class="list-group-item active bg-info text-center"
+          [ngClass]="getAllColorClasses()">
+        Tüm Renkler
+      </li>
+      <ng-container *ngFor="let color of colors">
+        <li (click)="setCurrentColor(color);"
+            routerLink="cars/color/{{color.id}}"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center color-item"
+            [ngClass]="getCurrentColorClass(color)">
+          {{ color.name }}
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
