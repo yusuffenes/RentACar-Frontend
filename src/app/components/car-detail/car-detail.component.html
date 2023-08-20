@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let carDetail of carDetails" class="col-md-10 mx-auto mb-4">
+      <div class="card one-piece-card custom-card">
+        <div class="image-container">
+          <img [src]="getImagePath(carDetail.imageFolder)"
+               class="card-img-top custom-img" alt="Car Image">
+          <div class="image-overlay"></div>
+        </div>
+        <div class="card-body text-center one-piece-card-body">
+          <h5 class="card-title">{{ carDetail.brandName }}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Marka: {{ carDetail.brandName }}</li>
+            <li class="list-group-item">Renk: {{ carDetail.colorName }}</li>
+            <li class="list-group-item">Model Yılı: {{ carDetail.modelYear }}</li>
+            <li class="list-group-item">Günlük Fiyat: {{ carDetail.dailyPrice | currency:"TL " }}</li>
+            <li class="list-group-item">Açıklama: {{ carDetail.description }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

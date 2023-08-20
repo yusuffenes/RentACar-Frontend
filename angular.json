@@ -22,11 +22,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/backgrounds"
             ],
             "styles": [
               "src/styles.css",
-              
+              "./node_modules/ngx-toastr/toastr.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [

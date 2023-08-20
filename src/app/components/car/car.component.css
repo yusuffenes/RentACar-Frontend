@@ -1,0 +1,55 @@
+/* CSS Kodu */
+.one-piece-card {
+  background-color: #F7DC6F;
+  border: none;
+  color: #F1FAEE;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.one-piece-card:hover {
+  transform: scale(1.05);
+}
+
+.one-piece-card-header {
+  background-color: #E63946;
+  color: #F1FAEE;
+  padding: 1rem;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.one-piece-card-img {
+  border-radius: 5px 5px 0 0;
+}
+
+.one-piece-card-body {
+  background-color: #F1FAEE;
+  color: #1D3557;
+  text-align: center;
+}
+
+.one-piece-card-body li.list-group-item {
+  background-color: #F1FAEE;
+  color: #1D3557;
+  font-weight: bold; 
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.one-piece-card-body li.list-group-item:hover {
+  background-color: #e63946;
+  color: #F1FAEE;
+}
+
+.btn-one-piece {
+  background-color: #457B9D;
+  color: #F1FAEE;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: bold;
+}
+
+.btn-one-piece:hover {
+  background-color: #1D3557;
+}

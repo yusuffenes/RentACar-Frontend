@@ -1,31 +1,26 @@
+<!-- HTML Kodu -->
 <div class="container">
-    <div *ngIf="dataLoaded!=false" class="table-responsive">
-        <table class="table table-hover table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Brand</th>
-                    <th scope="col">Color</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Model Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let car of cars">
-                    <th scope="row">{{car.id}}</th>
-                    <td>{{car.brandName}}</td>
-                    <td>{{car.colorName}}</td>
-                    <td>{{car.dailyPrice}}</td>
-                    <td>{{car.description}}</td>
-                    <td>{{car.modelYear}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div *ngIf="dataLoaded==false" class="text-center mt-3">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+  <div class="row">
+    <div *ngFor="let carDetails of carDetails" class="col-md-6 mb-4">
+      <div class="card one-piece-card">
+        <div class="card-header one-piece-card-header">
+          <h5 class="card-title">{{ carDetails.brandName }} {{ carDetails.modelYear }}</h5>
         </div>
+
+        <img [src]="backendUrl +'/Images/'+ carDetails.imageFolder"
+             style="object-fit: cover;" class="card-img-top one-piece-card-img" alt="Car Image">
+
+        <div class="card-body one-piece-card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Marka: {{ carDetails.brandName }}</li>
+            <li class="list-group-item">Yıl: {{ carDetails.modelYear }}</li>
+            <li class="list-group-item">Renk: {{ carDetails.colorName }}</li>
+            <li class="list-group-item">Fiyat: {{ carDetails.dailyPrice }} TL/Gün</li>
+            <li class="list-group-item">Açıklama: {{ carDetails.description }}</li>
+          </ul>
+          <a [routerLink]="'/car/detail/' + carDetails.id" class="btn btn-one-piece mt-3">Detaylar</a>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

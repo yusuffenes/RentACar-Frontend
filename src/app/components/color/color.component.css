@@ -1,0 +1,31 @@
+
+.one-piece-list {
+  padding-left: 0;
+  list-style-type: none;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ced4da; 
+  background-color: #394a5c; 
+}
+
+.one-piece-list li {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #6b7787; 
+  transition: background-color 0.2s ease-in-out;
+  color: #000000; 
+}
+
+.one-piece-list li:last-child {
+  border-bottom: none;
+}
+
+.one-piece-list li.active {
+  background-color: #99cfea; 
+  color: #1e1b1b;
+  border-color: #797979; 
+}
+
+.one-piece-list li:hover {
+  background-color: #2b3745;
+}
