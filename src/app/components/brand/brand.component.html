@@ -1,10 +1,14 @@
 <!-- HTML Kodu -->
+
 <ul class="list-group one-piece-list">
   <li routerLink="cars" (click)="unsetCurrentBrand()" [class]="getAllBrandClass()">Tüm Ürünler</li>
+  <div class="mb">
+    <input type="brand" [(ngModel)]="filterText" class="form-control" id="filterbrand" placeholder="Marka Giriniz">
+  </div>
   <li
     (click)="setCurrentBrand(brand)"
     routerLink="/car/brand/{{ brand.id }}"
-    *ngFor="let brand of brands"
+    *ngFor="let brand of brands | brandFilter:filterText"
     [class]="getCurrentBrandClass(brand)"
   >
     {{ brand.name }}

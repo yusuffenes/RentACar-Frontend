@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { empty } from 'rxjs';
+import {empty, filter} from 'rxjs';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -15,6 +15,7 @@ export class BrandComponent implements OnInit {
   currentBrand:any;
   selectedBrand: any;
   dataLoaded: boolean = false;
+  filterText="";
 
   constructor(private brandService: BrandService) { }
 
@@ -49,7 +50,6 @@ export class BrandComponent implements OnInit {
     this.selectedBrand = null;
     this.currentBrand = null; // Ek olarak, bu satırı da ekleyin.
   }
-  
 }
 
 

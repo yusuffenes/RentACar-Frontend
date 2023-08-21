@@ -4,7 +4,7 @@
     <div *ngFor="let carDetails of carDetails" class="col-md-6 mb-4">
       <div class="card one-piece-card">
         <div class="card-header one-piece-card-header">
-          <h5 class="card-title">{{ carDetails.brandName }} {{ carDetails.modelYear }}</h5>
+          <h5 class="card-title">{{ carDetails.brandName|uppercase }} {{ carDetails.modelYear }}</h5>
         </div>
 
         <img [src]="backendUrl +'/Images/'+ carDetails.imageFolder"
@@ -16,7 +16,7 @@
             <li class="list-group-item">Yıl: {{ carDetails.modelYear }}</li>
             <li class="list-group-item">Renk: {{ carDetails.colorName }}</li>
             <li class="list-group-item">Fiyat: {{ carDetails.dailyPrice }} TL/Gün</li>
-            <li class="list-group-item">Açıklama: {{ carDetails.description }}</li>
+            
           </ul>
           <a [routerLink]="'/car/detail/' + carDetails.id" class="btn btn-one-piece mt-3">Detaylar</a>
         </div>

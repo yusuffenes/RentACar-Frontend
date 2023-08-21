@@ -4,7 +4,7 @@
   list-style-type: none;
   border-radius: 5px;
   overflow: hidden;
-  background-color: transparent; 
+  background-color: transparent;
   border: 1px solid #e63946;
 }
 
@@ -31,5 +31,11 @@
 }
 
 .brand-list li {
-  font-weight: normal; 
+  font-weight: bolder;
+}
+
+/* Bu stil, giriş alanınızın içini düzenler */
+.form-control {
+  color: #e63946;
+  background-color:#F1FAEE ;
 }

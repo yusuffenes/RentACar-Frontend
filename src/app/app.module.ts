@@ -14,6 +14,9 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 
 
 import { CarImageComponent } from './components/car-image/car-image.component';
+import {FormsModule} from "@angular/forms";
+import { BrandFilterPipe } from './pipes/brand-filter.pipe';
+import { ColorFilterPipe } from './pipes/color-filter.pipe';
 
 
 @NgModule({
@@ -28,13 +31,16 @@ import { CarImageComponent } from './components/car-image/car-image.component';
     CarDetailComponent,
 
     CarImageComponent,
+      BrandFilterPipe,
+      ColorFilterPipe,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
