@@ -1,5 +1,5 @@
 
-![alt text]([https://i.imgur.com/KLEwZ2d.png](https://i.imgur.com/KLEwZ2d.png))
+![alt text](https://i.imgur.com/KLEwZ2d.png)
 ![alt text](https://i.imgur.com/qyNGqBO.png)
 
 # RentACar
