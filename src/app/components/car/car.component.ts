@@ -10,6 +10,7 @@ import { BrandService } from 'src/app/services/brand.service';
 import { CarDetailService } from 'src/app/services/car-detail.service';
 import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
+import { CartService } from 'src/app/services/cart.service';
 import { ColorService } from 'src/app/services/color.service';
 import { BackendUrl } from 'src/app/services/serviceConstants';
 
@@ -24,7 +25,7 @@ export class CarComponent implements OnInit {
   carDetails: CarDetail[];
   carImagesUrl: string[];
 
-  constructor(private carService: CarService, private activatedRoute: ActivatedRoute,private router:Router) { }
+  constructor(private carService: CarService, private activatedRoute: ActivatedRoute,private router:Router,private cartService:CartService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {

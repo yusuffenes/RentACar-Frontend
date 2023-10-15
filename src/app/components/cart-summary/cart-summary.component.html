@@ -1,0 +1,19 @@
+<li *ngIf='cartItems' class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Sepeteniz
+    </a>
+    <ul class="dropdown-menu">
+      <li *ngFor="let cartItem of cartItems" class="d-flex align-items-center">
+        <a class="dropdown-item d-flex align-items-center">
+          <span class="badge bg-secondary text-white me-2">{{cartItem.quantitiy}}</span>
+          {{cartItem.car.description}}
+          <span (click)="removeFromCart(cartItem.car)" class="badge bg-danger text-white ms-2" style="cursor: pointer;">Sil</span>
+        </a>
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><a class="dropdown-item" href="#">Sepete Git</a></li>
+    </ul>
+  </li>
+  

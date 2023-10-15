@@ -14,7 +14,8 @@
             <li class="list-group-item">Renk: {{ carDetail.colorName }}</li>
             <li class="list-group-item">Model Yılı: {{ carDetail.modelYear }}</li>
             <li class="list-group-item">Günlük Fiyat: {{ carDetail.dailyPrice | currency:"TL " }}</li>
-            <li class="list-group-item">Açıklama:ss {{ carDetail.description }}</li>
+            <li class="list-group-item">Açıklama: {{ carDetail.description }}</li>
+            <li><button (click)="addCart(carDetail)" class="btn btn-success">Sepete Ekle</button></li>
           </ul>
         </div>
       </div>
