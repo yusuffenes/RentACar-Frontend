@@ -1,6 +1,8 @@
 
-![alt text](https://i.imgur.com/KLEwZ2d.png)
-![alt text](https://i.imgur.com/qyNGqBO.png)
+![image](https://github.com/yusuffenes/RentACar-Frontend/assets/66623374/3590a7dc-b4a1-45e5-a20f-1c4e5a770f09)
+
+![image](https://github.com/yusuffenes/RentACar-Frontend/assets/66623374/ffcde7d1-c1df-477f-8744-8ef120e06026)
+
 
 # RentACar
 
