@@ -37,8 +37,7 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CarImageComponent,
       BrandFilterPipe,
       ColorFilterPipe,
-      CartSummaryComponent,
-    
+      CartSummaryComponent,    
 
   ],
     imports: [

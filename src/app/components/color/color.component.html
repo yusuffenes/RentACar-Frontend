@@ -1,14 +1,28 @@
-<ul class="list-group one-piece-list">
-  <li routerLink="cars" (click)="unsetCurrentColor()" [class]="getAllColorClass()">Tüm Renkler</li>
-  <div class="mb">
-    <input type="colorFilter" [(ngModel)]="filterText" class="form-control" id="filterColor" placeholder="Renk Giriniz">
+<div class="container one-piece-theme text-center">
+  <div routerLink="cars" class="alert alert-info" role="alert" style="background-color: #E63946;">
+    <strong><span style="color: white;">TÜM RENKLER</span></strong>
   </div>
-  <li
-    (click)="setCurrentColor(color)"
-    routerLink="/car/color/{{ color.id }}"
-    *ngFor="let color of colors | colorFilter:filterText"
-    [class]="getCurrentColorClass(color)"
+  <select
+    class="form-select custom-select"
+    *ngIf="colorLoaded"
+    [(ngModel)]="selectedColor"
+    aria-label="Renk seçiniz"
   >
-    {{ color.name }}
-  </li>
-</ul>
+    <option [ngValue]="null">Renk seçiniz</option>
+    <option
+      *ngFor="let color of colors | colorFilter : filterText"
+      [ngValue]="color.id"
+    >
+      {{ color.name }}
+    </option>
+  </select>
+  <div class="mt-3">
+    <button
+      class="btn btn-danger"
+      (click)="filterColor()"
+      routerLink="car/color/{{ selectedColor }}"
+    >
+      Filtrele
+    </button>
+  </div>
+</div>

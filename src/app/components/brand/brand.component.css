@@ -1,41 +1,48 @@
-
-.one-piece-list {
-  padding-left: 0;
-  list-style-type: none;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: transparent;
-  border: 1px solid #e63946;
-}
-
-.one-piece-list li {
-  padding: 10px 20px;
+/* Özelleştirilmiş Select Kutusu */
+.custom-select {
+  background-color: #f8f9fa; /* Arka plan rengi */
+  border: 1px solid #ced4da; /* Kenarlık rengi */
+  border-radius: 5px; /* Kenar yuvarlatma */
+  color: #495057; /* Metin rengi */
+  padding: 10px; /* İç boşluklar */
   cursor: pointer;
-  border-bottom: 1px solid #6b7787;
-  transition: background-color 0.2s ease-in-out;
-  color: #000000;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
-.one-piece-list li:last-child {
-  border-bottom: none;
+.custom-select option {
+  background-color: #ffffff; /* Seçeneklerin arka plan rengi */
+  color: #000000; /* Seçeneklerin metin rengi */
 }
 
-.one-piece-list li.active {
-  background-color: #e63946;
-  border-color: #e63946;
+.custom-select:hover,
+.custom-select:focus {
+  background-color: #e9ecef; /* Fare üzerine gelindiğinde ve odaklandığında arka plan rengi */
+  border-color: #adb5bd; /* Fare üzerine gelindiğinde ve odaklandığında kenarlık rengi */
 }
 
-.one-piece-list li:hover {
-  background-color: #e63946;
-  color: #ffffff;
+/* Daha Şık Seçeneklerin Stili */
+.custom-select select {
+  appearance: none; /* Tarayıcı varsayılan stillerini kaldır */
+  width: 100%; /* Tam genişlik */
+  padding: 10px; /* İç boşluklar */
+  font-size: 16px; /* Metin boyutu *//* Aşağı ok simgesi ekleyebilirsiniz */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 20px 20px;
 }
 
-.brand-list li {
-  font-weight: bolder;
+/* Aşağı Ok Simgesinin Rengi */
+.custom-select select::-ms-expand {
+  color: #495057;
 }
 
-/* Bu stil, giriş alanınızın içini düzenler */
-.form-control {
-  color: #e63946;
-  background-color:#F1FAEE ;
+/* Hover ve Odaklandığında Daha Şık Görünüm */
+.custom-select select:hover,
+.custom-select select:focus {
+  background-color: #e9ecef; /* Fare üzerine gelindiğinde ve odaklandığında arka plan rengi */
+  border-color: #adb5bd; /* Fare üzerine gelindiğinde ve odaklandığında kenarlık rengi */
+}
+
+.brand-text {
+  color: #E63946; /* Kırmızı renk */
 }

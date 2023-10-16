@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -11,41 +11,36 @@ import { ColorService } from 'src/app/services/color.service';
 export class ColorComponent implements OnInit {
   colors: Color[] = [];
   currentColor:any;
+  selectedColor:any;
+  filteredColor:any[]=[];
   filterText="";
+  colorLoaded: boolean = false;
 
-  constructor(private colorService: ColorService, private router:Router) { }
+  constructor(private colorService: ColorService, private router:Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = +params['id']; // URL'den "id" parametresini alın
+      if (id) {
+        this.selectedColor = id;
+        this.filterColor();
+      }
+    });
     this.getColors();
   }
 
   getColors() {
     this.colorService.getColors().subscribe((response) => {
       this.colors = response.data;
+      this.colorLoaded = true;
+      this.filteredColor = this.colors;
     })
   }
 
-  setCurrentColor(color: Color) {
-    this.currentColor = color;
-  }
-
-  getCurrentColorClass(color: Color): string {
-    if (color === this.currentColor) {
-      return 'list-group-item active';
-    } else {
-      return 'list-group-item';
+  filterColor(){
+    if(this.selectedColor){
+      this.filteredColor=this.colors.filter((brand) => brand.id===this.selectedColor)
     }
   }
-
-  unsetCurrentColor(): void {
-    this.currentColor = null;
-  }
-
-  getAllColorClass(): string {
-    if (!this.currentColor) {
-      return 'list-group-item active';
-    } else {
-      return 'list-group-item';
-    }
-  }
+  
 }
