@@ -3,6 +3,7 @@
 
 ![image](https://github.com/yusuffenes/RentACar-Frontend/assets/66623374/ffcde7d1-c1df-477f-8744-8ef120e06026)
 
+![image](https://github.com/yusuffenes/RentACar-Frontend/assets/66623374/8a5e9a04-1637-45b8-bfa2-14e1b661004f)
 
 # RentACar
 
