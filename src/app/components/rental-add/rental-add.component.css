@@ -1,0 +1,62 @@
+/* Tema rengi */
+body {
+    
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+  }
+  
+  .one-piece-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border: 2px solid #E63946;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  
+  h1 {
+    color: #E63946;
+  }
+  
+  .form-container {
+    margin: 20px 0;
+  }
+  
+  .form-group {
+    margin: 10px 0;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    color: #E63946;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    background-color: #E63946;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #E63946;
+  }
+  

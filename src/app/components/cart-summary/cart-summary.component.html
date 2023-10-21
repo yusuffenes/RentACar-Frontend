@@ -9,11 +9,10 @@
           {{cartItem.car.description}}
           <span (click)="removeFromCart(cartItem.car)" class="badge bg-danger text-white ms-2" style="cursor: pointer;">Sil</span>
         </a>
-      </li>
-      <li>
-        <hr class="dropdown-divider">
-      </li>
-      <li><a class="dropdown-item" href="#">Sepete Git</a></li>
+        <li>
+          <a routerLink="rentals/add" style="cursor: pointer" class="dropdown-item"
+            ><strong class="center-text">ŞİMDİ KİRALA</strong></a
+          >
+        </li>
     </ul>
   </li>
-  

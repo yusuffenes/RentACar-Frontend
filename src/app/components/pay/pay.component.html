@@ -1,0 +1,22 @@
+<form [formGroup]="payAddForm" class="form-container">
+  <div class="form-group">
+    <label for="fullName">Kartın Üzerindeki Ad</label>
+    <input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="Örnek örnek">
+  </div>
+
+  <div class="form-group">
+    <label for="cardNumber">Kart Numarası</label>
+    <input type="text" class="form-control" id="cardNumber" formControlName="cardNumber" placeholder="Kart Numarası" (input)="formatCardNumber($event)">
+  </div>
+  <div class="form-group">
+    <label for="cvv">CVV</label>
+    <input type="text" class="form-control" id="cvv" formControlName="cvv" placeholder="123" (input)="formatCvv($event)">
+  </div>
+  <div class="form-group">
+    <label for="expiryDate">Son Kullanma Tarihi (AA/YY)</label>
+    <input type="number" class="form-control" id="month" formControlName="month" placeholder="12" min="1" max="12"> /
+    <input type="number" class="form-control" id="year" formControlName="year" placeholder="23" min="23" max="99">
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="add()">Ödemeyi Yap</button>
+</form>

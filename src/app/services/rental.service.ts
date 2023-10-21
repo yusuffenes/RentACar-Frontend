@@ -10,16 +10,21 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class RentalService {
+  makeRent(rental: Rental) {
+    throw new Error('Method not implemented.');
+  }
 
-  apiUrl = "https://localhost:44390/api/Rentals/getrantaldetail"
+  apiUrl = "https://localhost:44390/api/Rentals/"
 
   constructor(private httpClient: HttpClient) { }
 
   getRentals():Observable<ListResponseModel<Rental>>{
-    return this.httpClient.get<ListResponseModel<Rental>>(this.apiUrl);
+    let newPath=this.apiUrl +"getrentaldetails";
+    return this.httpClient.get<ListResponseModel<Rental>>(newPath);
   }
-  IsCarAvaible(carId:number):Observable<ResponseModel>{
-    let newPath = this.apiUrl +"iscaravaible";
-    return this.httpClient.get<ResponseModel>(newPath)
+
+  addRental(rental:Rental):Observable<ResponseModel>{
+    let newPath=this.apiUrl+"rulesforadding";
+    return this.httpClient.post<ResponseModel>(newPath,rental);
   }
 }

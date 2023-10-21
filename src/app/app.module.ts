@@ -15,15 +15,18 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 
 
 import { CarImageComponent } from './components/car-image/car-image.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { ColorFilterPipe } from './pipes/color-filter.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
-
+import {PaymentComponent} from "./components/payment/payment.component";
+import { PayComponent } from './components/pay/pay.component';
+import { RentalAddComponent } from './components/rental-add/rental-add.component';
 
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     CarComponent,
@@ -35,20 +38,23 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CarDetailComponent,
 
     CarImageComponent,
-      BrandFilterPipe,
-      ColorFilterPipe,
-      CartSummaryComponent,    
+    BrandFilterPipe,
+    ColorFilterPipe,
+    CartSummaryComponent,
+    PaymentComponent,
+    PayComponent,
+    RentalAddComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ToastrModule.forRoot({progressBar:true,timeOut:2400,closeButton:true,positionClass: 'toast-bottom-right'}),
-        BrowserAnimationsModule
-    ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ToastrModule.forRoot({progressBar: true, timeOut: 2400, closeButton: true, positionClass: 'toast-bottom-right'}),
+    BrowserAnimationsModule,
+    ReactiveFormsModule
+  ],
+  providers: []
 })
 export class AppModule { }
